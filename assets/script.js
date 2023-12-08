@@ -8,6 +8,7 @@ function getMealApi() {
    .then(function(data) {
       console.log(data)
       console.log(data.meals[0].strMeal)
+      console.log(data.meals[0].strInstructions)
    })
 }
 getMealApi()
