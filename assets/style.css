@@ -75,3 +75,15 @@
 .bd-mode-toggle .dropdown-menu .active .bi {
   display: block !important;
 }
+
+.overlayText {
+  position: absolute;
+  top: 6px;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.img1 {
+  height: 225px;
+}
