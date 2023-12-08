@@ -8,7 +8,7 @@ const options = {
      }
    };
    
-   fetch('https://api.yelp.com/v3/businesses/search?location=Denver&sort_by=best_match&limit=20', options)
+   fetch('https://api.yelp.com/v3/businesses/search?location=Denver&sort_by=best_match&limit=20')
      .then(response => response.json())
      .then(response => console.log(response))
      .catch(err => console.error(err));
