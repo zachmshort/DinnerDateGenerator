@@ -14,3 +14,14 @@ const options = {
      .catch(err => console.error(err));
 
 //API for Location
+
+function displayData() {
+  $(".weatherForecast").show();
+  $(".container1").show();
+  var displayImage = "http://www.w3.org/2000/svg";
+
+  $(".today").empty();
+
+  $(".col1").children("div").children("svg").children("text").text("beans");
+}
+displayData();
