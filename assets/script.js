@@ -1,29 +1,22 @@
-//API for yelp
+function getCocktailApi() {
+  var cocktailAPI = "https://www.thecocktaildb.com/api/json/v1/1/random.php";
 
-// const options = {
-//   method: "GET",
-//   headers: {
-//     accept: "application/json",
-//     Authorization:
-//       "Bearer WrsNmnOdmTrlPocLosX8oMYhWXd3iZLTlz2NUkekcC94AdSYGQctfpbSGlJPOG2mvyWmXFIJVJBgdQxXzNMIztYgbjhyGbJaGPqPHFVwYRTwOMbAtGXWFHuGPepwZXYx",
-//   },
-// };
+  fetch(cocktailAPI)
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+      console.log(data);
+      console.log(data.drinks[0].strDrink);
+    });
+}
 
-// fetch(
-//   "https://api.yelp.com/v3/businesses/search?location=Denver&sort_by=best_match&limit=20",
-//   options
-// )
-//   .then((response) => response.json())
-//   .then((response) => console.log(response))
-//   .catch((err) => console.error(err));
-
-//API for Location
+getCocktailApi();
 
 function displayData() {
   $(".weatherForecast").show();
   $(".container1").show();
   var displayImage = "assets/cow-rotate.gif";
-  // $(".img1").css({ background: "url(" + displayImage + ")" });
   $(".img1").attr("src", displayImage);
 
   $(".today").empty();
@@ -42,4 +35,17 @@ function displayData() {
     .children("small")
     .append("<p>" + "beans" + "<div />" + "beans" + "</p>");
 }
-displayData();
+
+function getMealApi() {
+  var mealApi = "https://www.themealdb.com/api/json/v1/1/random.php";
+
+  fetch(mealApi)
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+      console.log(data);
+      console.log(data.meals[0].strMeal);
+    });
+}
+getMealApi();
