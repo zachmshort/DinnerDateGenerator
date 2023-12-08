@@ -1,3 +1,4 @@
+
 function getCocktailApi() {
   var cocktailAPI = "https://www.thecocktaildb.com/api/json/v1/1/random.php";
 
@@ -7,7 +8,9 @@ function getCocktailApi() {
     })
     .then(function (data) {
       console.log(data);
-      console.log(data.drinks[0].strDrink);
+      console.log(data.drinks[0].strDrink, data.drinks[0].strIngredient1, data.drinks[0].strIngredient2);
+      
+
     });
 }
 
