@@ -1,16 +1,13 @@
-//API for yelp
+function getMealApi() {
+   var mealApi = "https://www.themealdb.com/api/json/v1/1/random.php";
 
-const options = {
-     method: 'GET',
-     headers: {
-       accept: 'application/json',
-       Authorization: 'Bearer WrsNmnOdmTrlPocLosX8oMYhWXd3iZLTlz2NUkekcC94AdSYGQctfpbSGlJPOG2mvyWmXFIJVJBgdQxXzNMIztYgbjhyGbJaGPqPHFVwYRTwOMbAtGXWFHuGPepwZXYx'
-     }
-   };
-   
-   fetch('https://api.yelp.com/v3/businesses/search?location=Denver&sort_by=best_match&limit=20')
-     .then(response => response.json())
-     .then(response => console.log(response))
-     .catch(err => console.error(err));
-
-//API for Location
+   fetch(mealApi)
+   .then(function (response) {
+      return response.json();
+   })
+   .then(function(data) {
+      console.log(data)
+      console.log(data.meals[0].strMeal)
+   })
+}
+getMealApi()
