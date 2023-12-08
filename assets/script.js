@@ -22,10 +22,24 @@
 function displayData() {
   $(".weatherForecast").show();
   $(".container1").show();
-  var displayImage = "http://www.w3.org/2000/svg";
+  var displayImage = "assets/cow-rotate.gif";
+  // $(".img1").css({ background: "url(" + displayImage + ")" });
+  $(".img1").attr("src", displayImage);
 
   $(".today").empty();
-
-  $(".col1").children("div").children("svg").children("text").text("beans");
+  //title
+  $(".col1")
+    .children("div")
+    .children("div")
+    .children("div")
+    .children("span")
+    .text("beans");
+  //delivery or reserve
+  $(".col1")
+    .children("div")
+    .children("div")
+    .children("div")
+    .children("small")
+    .append("<p>" + "beans" + "<div />" + "beans" + "</p>");
 }
 displayData();
