@@ -1,29 +1,18 @@
-//API for yelp
-var cityInput = document.getElementById('cityInput');
-console.log(cityInput);
 
-const options = {
-     method: 'GET',
-     headers: {
-       accept: 'application/json',
-       Authorization: 'Bearer WrsNmnOdmTrlPocLosX8oMYhWXd3iZLTlz2NUkekcC94AdSYGQctfpbSGlJPOG2mvyWmXFIJVJBgdQxXzNMIztYgbjhyGbJaGPqPHFVwYRTwOMbAtGXWFHuGPepwZXYx'
-     }
-   };
-   
-   fetch('https://api.yelp.com/v3/businesses/search?location=Denver&sort_by=best_match&limit=20')
-     .then(response => response.json())
-     .then(response => console.log(response))
-     .catch(err => console.error(err));
+function getCocktailApi() {
+    var cocktailAPI = "https://www.thecocktaildb.com/api/json/v1/1/random.php";
 
-//API for Location
+    fetch(cocktailAPI)
+    .then(function (response) {
+        return response.json();
+      })
+      .then(function (data) {
+        console.log(data)
+        console.log(data.drinks[0].strDrink)
+      
+      })
+      
+    }
 
-function displayData() {
-  $(".weatherForecast").show();
-  $(".container1").show();
-  var displayImage = "http://www.w3.org/2000/svg";
+getCocktailApi();
 
-  $(".today").empty();
-
-  $(".col1").children("div").children("svg").children("text").text("beans");
-}
-displayData();
