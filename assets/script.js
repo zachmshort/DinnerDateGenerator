@@ -8,7 +8,24 @@ function getCocktailApi() {
     })
     .then(function (data) {
       console.log(data);
-      console.log(data.drinks[0].strDrink, data.drinks[0].strIngredient1, data.drinks[0].strIngredient2);
+      console.log(data.drinks[0].strDrink);
+      console.log(data.drinks[0].strInstructions);
+      console.log(data.drinks[0].strIngredient1, data.drinks[0].strMeasure1);
+      console.log(data.drinks[0].strIngredient2, data.drinks[0].strMeasure2);
+      console.log(data.drinks[0].strIngredient3, data.drinks[0].strMeasure3);
+      console.log(data.drinks[0].strIngredient4, data.drinks[0].strMeasure4);
+      console.log(data.drinks[0].strIngredient5, data.drinks[0].strMeasure5);
+      console.log(data.drinks[0].strIngredient6, data.drinks[0].strMeasure6);
+      console.log(data.drinks[0].strIngredient7, data.drinks[0].strMeasure7);
+      console.log(data.drinks[0].strIngredient8, data.drinks[0].strMeasure8);
+      console.log(data.drinks[0].strIngredient9, data.drinks[0].strMeasure9);
+      console.log(data.drinks[0].strIngredient10, data.drinks[0].strMeasure10);
+      console.log(data.drinks[0].strIngredient11, data.drinks[0].strMeasure11);
+      console.log(data.drinks[0].strIngredient12, data.drinks[0].strMeasure12);
+      console.log(data.drinks[0].strIngredient13, data.drinks[0].strMeasure13);
+      console.log(data.drinks[0].strIngredient14, data.drinks[0].strMeasure14);
+      console.log(data.drinks[0].strIngredient15, data.drinks[0].strMeasure15);
+      console.log(data.drinks[0].strDrinkThumb);
       
 
     });
