@@ -1,4 +1,5 @@
 //API for yelp
+var cityInput = document.getElementById('cityInput');
 
 const options = {
      method: 'GET',
