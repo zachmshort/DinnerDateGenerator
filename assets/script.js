@@ -31,6 +31,38 @@ function getCocktailApi() {
 
 getCocktailApi();
 
+
+function getMealApi() {
+  var mealApi = "https://www.themealdb.com/api/json/v1/1/random.php";
+fetch(mealApi)
+.then(function (response) {
+  return response.json();
+})
+.then(function (data) {
+  var mealArray = data.meals[0];
+
+  console.log(data);
+  console.log(mealArray.strMeal);
+  console.log(mealArray.strInstructions);
+
+  var mealIngredients = [];
+
+  for (let i = 1; i <= 20; i++) {
+    const ingredient = mealArray["strIngredient" + i];
+    const measure = mealArray["strMeasure" + i];
+
+    if (ingredient && measure) {
+      mealIngredients.push({ ingredient, measure });
+    }
+  }
+
+  console.log(mealIngredients);
+  console.log(mealArray.strMealThumb);
+});
+}
+
+getMealApi();
+
 function displayData() {
   $(".weatherForecast").show();
   $(".container1").show();
