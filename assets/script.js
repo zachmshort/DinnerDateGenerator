@@ -65,7 +65,7 @@ function getMealApi() {
     })
     .then(function (data) {
       console.log(data);
-      console.log(data.meals[0].strMeal);
+      console.log(data.meals[0].strMeal, data.meals[0].strInstructions);
       console.log(data.meals[0].strInstructions);
       console.log(data.meals[0].strIngredient1, data.meals[0].strMeasure1);
       console.log(data.meals[0].strIngredient2, data.meals[0].strMeasure2);
