@@ -30,12 +30,11 @@ function searchRecipes() {
 
   if (ingredientInput.trim() !== "") {
     recipeByIngredient();
-  } else 
-    {
-    $('#ingredientAlert').removeClass('d-none');
+  } else {
+    $("#ingredientAlert").removeClass("d-none");
 
-    $('#ingredientAlert .close').on('click', function() {
-      $('#ingredientAlert').addClass('d-none');
+    $("#ingredientAlert .close").on("click", function () {
+      $("#ingredientAlert").addClass("d-none");
     });
   }
 }
@@ -71,7 +70,9 @@ function getMealApi() {
     })
     .then(function (data) {
       mealArray = data.meals[0];
+      lStorage();
       displayMealData();
+      displaySaved();
     });
 }
 
@@ -88,7 +89,6 @@ function getRandomMealApi() {
 }
 
 function displayMealData() {
-  $(".col2").show();
   $(".col1").show();
   var displayImage = mealArray.strMealThumb;
   $(".img1").attr("src", displayImage);
@@ -173,9 +173,9 @@ function displayMealData() {
       description.append(ingredient + "; " + measure + "<div />");
     }
   }
-  lStorage();
 }
 function displayDrinkData() {
+  $(".col2").show();
   var displayImage = drinkArray.strDrinkThumb;
   $(".img2").attr("src", displayImage);
   $("#text2").empty();
@@ -251,23 +251,24 @@ function displayDrinkData() {
 }
 
 function lStorage() {
-var savedIngredient = JSON.parse(localStorage.getItem("ingredient")) || [];
-savedIngredient.push({ ingredient: mealArray.strMeal, recipe: mealID });
-localStorage.setItem("ingredient", JSON.stringify(savedIngredient));
+  var savedIngredient = JSON.parse(localStorage.getItem("ingredient")) || [];
+  savedIngredient.push({ ingredient: mealArray.strMeal, recipe: mealID });
+  localStorage.setItem("ingredient", JSON.stringify(savedIngredient));
 }
 
 function displaySaved() {
   $("#savedSearches").empty();
   var saved = JSON.parse(localStorage.getItem("ingredient")) || [];
-  saved.forEach((entry) => {
-    $("#savedSearches").append("<li value=\""+entry.recipe+"\">" + entry.ingredient + "</li>");
+  saved.slice(-5).forEach((entry) => {
+    $("#savedSearches").append(
+      '<li value="' + entry.recipe + '">' + entry.ingredient + "</li>"
+    );
     $($("#savedSearches").children()).addClass("button");
   });
   $(".button").on("click", clickHandler);
 }
 
-function clickHandler () {
+function clickHandler() {
   mealID = $(this).attr("value");
   getMealApi();
 }
-
