@@ -24,13 +24,18 @@ $("#random").on("click", getRandomMealApi);
 $("#random").on("click", getCocktailApi);
 
 function searchRecipes() {
-  ingredientInput = $(this).siblings(".form-control").val();
+  ingredientInput = $("#ingredientInput").val();
   console.log(ingredientInput);
 
   if (ingredientInput.trim() !== "") {
     recipeByIngredient();
-  } else {
-    console.log("Please enter a valid ingredient");
+  } else 
+    {
+    $('#ingredientAlert').removeClass('d-none');
+
+    $('#ingredientAlert .close').on('click', function() {
+      $('#ingredientAlert').addClass('d-none');
+    });
   }
 }
 
@@ -41,7 +46,6 @@ function recipeByIngredient() {
   fetch(mealURL)
     .then(function (response) {
       if (!response.ok) {
-        alert("Please enter an ingredient or select Suprise Me!");
         throw respone.json();
       }
       return response.json();
