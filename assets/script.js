@@ -87,6 +87,7 @@ function getRandomMealApi() {
     });
 }
 
+
 function displayMealData() {
   $(".col2").show();
   $(".col1").show();
@@ -269,5 +270,7 @@ function displaySaved() {
 function clickHandler () {
   mealID = $(this).attr("value");
   getMealApi();
+  getCocktailApi();
+
 }
 
