@@ -103,11 +103,17 @@
             <p class="lead text-body-secondary">
             </p>
             <p>
+              <div id="ingredientAlert" class="alert alert-warning alert-dismissible d-none" role="alert">
+                <strong>Sorry!</strong> Please try another primary ingredient or select Suprise Me!
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
               <input
               type="text"
               id="ingredientInput"
               class="form-control"
-              placeholder="What ingredient do you already have? E.g. Chicken"
+              placeholder="What primary ingredient do you already have? E.g. Beef, eggs, or lettuce"
             />
               <a href="#" class="btn btn-secondary my-6" id="searchBtn">Search Recipes</a>
               <a href="#" class="btn btn-secondary my-2" id="random"> Suprise Me!</a>
