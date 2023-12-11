@@ -1,3 +1,8 @@
+
+var mealObj;
+var ingredientInput;
+var mealID;
+
 var mealArray;
 var drinkArray;
 
@@ -16,7 +21,59 @@ function getCocktailApi() {
 
 getCocktailApi();
 
+
+
+$("#searchBtn").on("click", searchRecipes);
+
+function searchRecipes() {
+  
+  ingredientInput = $(this).siblings(".form-control").val();
+  console.log(ingredientInput);
+
+  if (ingredientInput.trim() !== "") {
+    recipeByIngredient();
+  } else {
+    console.log("Please enter a valid ingredient");
+  }
+}
+
+function recipeByIngredient() {
+  var mealURL = 
+    "https://www.themealdb.com/api/json/v1/1/filter.php?i=" + ingredientInput;
+    console.log(mealURL);
+  fetch(mealURL)
+    .then (function (response) {
+      if (!response.ok) {
+      alert('Please enter an ingredient or select Suprise Me!');
+      throw respone.json();
+    }
+    return response.json();
+  })
+  .then(function (data) {
+    var mealNumber = Math.floor(Math.random() * data.meals.length);
+    mealObj = data;
+    mealID = data.meals[mealNumber].idMeal;
+    console.log(mealObj);
+    getMealApi();
+    getCocktailApi();
+  });
+  
+}
+
 function getMealApi() {
+  var mealApi = "https://www.themealdb.com/api/json/v1/1/lookup.php?i=" + mealID;
+  console.log(mealApi);
+  fetch(mealApi)
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+      mealArray = data.meals[0];
+      displayMealData();
+    });
+}
+
+function getRandomMealApi() {
   var mealApi = "https://www.themealdb.com/api/json/v1/1/random.php";
   fetch(mealApi)
     .then(function (response) {
@@ -27,7 +84,7 @@ function getMealApi() {
       displayMealData();
     });
 }
-getMealApi();
+getRandomMealApi();
 
 function displayMealData() {
   $(".weatherForecast").show();
@@ -121,7 +178,6 @@ function displayDrinkData() {
   $(".container1").show();
   var displayImage = drinkArray.strDrinkThumb;
   $(".img2").attr("src", displayImage);
-
   $(".today").empty();
   //title
   $(".col2")
@@ -193,3 +249,4 @@ function displayDrinkData() {
     }
   }
 }
+
