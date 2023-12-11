@@ -1,11 +1,11 @@
-
 var mealObj;
 var ingredientInput;
 var mealID;
 
 var mealArray;
 var drinkArray;
-
+$(".col2").hide();
+$(".col1").hide();
 function getCocktailApi() {
   var cocktailAPI = "https://www.thecocktaildb.com/api/json/v1/1/random.php";
 
@@ -19,14 +19,11 @@ function getCocktailApi() {
     });
 }
 
-getCocktailApi();
-
-
-
 $("#searchBtn").on("click", searchRecipes);
+$("#random").on("click", getRandomMealApi);
+$("#random").on("click", getCocktailApi);
 
 function searchRecipes() {
-  
   ingredientInput = $(this).siblings(".form-control").val();
   console.log(ingredientInput);
 
@@ -38,30 +35,30 @@ function searchRecipes() {
 }
 
 function recipeByIngredient() {
-  var mealURL = 
+  var mealURL =
     "https://www.themealdb.com/api/json/v1/1/filter.php?i=" + ingredientInput;
-    console.log(mealURL);
+  console.log(mealURL);
   fetch(mealURL)
-    .then (function (response) {
+    .then(function (response) {
       if (!response.ok) {
-      alert('Please enter an ingredient or select Suprise Me!');
-      throw respone.json();
-    }
-    return response.json();
-  })
-  .then(function (data) {
-    var mealNumber = Math.floor(Math.random() * data.meals.length);
-    mealObj = data;
-    mealID = data.meals[mealNumber].idMeal;
-    console.log(mealObj);
-    getMealApi();
-    getCocktailApi();
-  });
-  
+        alert("Please enter an ingredient or select Suprise Me!");
+        throw respone.json();
+      }
+      return response.json();
+    })
+    .then(function (data) {
+      var mealNumber = Math.floor(Math.random() * data.meals.length);
+      mealObj = data;
+      mealID = data.meals[mealNumber].idMeal;
+      console.log(mealObj);
+      getMealApi();
+      getCocktailApi();
+    });
 }
 
 function getMealApi() {
-  var mealApi = "https://www.themealdb.com/api/json/v1/1/lookup.php?i=" + mealID;
+  var mealApi =
+    "https://www.themealdb.com/api/json/v1/1/lookup.php?i=" + mealID;
   console.log(mealApi);
   fetch(mealApi)
     .then(function (response) {
@@ -84,15 +81,14 @@ function getRandomMealApi() {
       displayMealData();
     });
 }
-getRandomMealApi();
 
 function displayMealData() {
-  $(".weatherForecast").show();
-  $(".container1").show();
+  $(".col2").show();
+  $(".col1").show();
   var displayImage = mealArray.strMealThumb;
   $(".img1").attr("src", displayImage);
 
-  $(".today").empty();
+  $("#text1").empty();
   //title
   $(".col1")
     .children("div")
@@ -174,11 +170,9 @@ function displayMealData() {
   }
 }
 function displayDrinkData() {
-  $(".weatherForecast").show();
-  $(".container1").show();
   var displayImage = drinkArray.strDrinkThumb;
   $(".img2").attr("src", displayImage);
-  $(".today").empty();
+  $("#text2").empty();
   //title
   $(".col2")
     .children("div")
@@ -249,4 +243,3 @@ function displayDrinkData() {
     }
   }
 }
-
