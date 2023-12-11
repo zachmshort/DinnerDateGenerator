@@ -1,11 +1,12 @@
 var mealObj;
 var ingredientInput;
 var mealID;
-
 var mealArray;
 var drinkArray;
+displaySaved();
 $(".col2").hide();
 $(".col1").hide();
+
 function getCocktailApi() {
   var cocktailAPI = "https://www.thecocktaildb.com/api/json/v1/1/random.php";
 
@@ -181,6 +182,7 @@ function displayMealData() {
       description.append(ingredient + "; " + measure + "<div />");
     }
   }
+  lStorage();
 }
 function displayDrinkData() {
   var displayImage = drinkArray.strDrinkThumb;
@@ -256,3 +258,25 @@ function displayDrinkData() {
     }
   }
 }
+
+function lStorage() {
+var savedIngredient = JSON.parse(localStorage.getItem("ingredient")) || [];
+savedIngredient.push({ ingredient: mealArray.strMeal, recipe: mealID });
+localStorage.setItem("ingredient", JSON.stringify(savedIngredient));
+}
+
+function displaySaved() {
+  $("#savedSearches").empty();
+  var saved = JSON.parse(localStorage.getItem("ingredient")) || [];
+  saved.forEach((entry) => {
+    $("#savedSearches").append("<li value=\""+entry.recipe+"\">" + entry.ingredient + "</li>");
+    $($("#savedSearches").children()).addClass("button");
+  });
+  $(".button").on("click", clickHandler);
+}
+
+function clickHandler () {
+  mealID = $(this).attr("value");
+  getMealApi();
+}
+
