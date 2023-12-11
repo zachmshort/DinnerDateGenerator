@@ -32,11 +32,11 @@ function searchRecipes() {
     recipeByIngredient();
   } else 
     {
-    $('#ingredientAlert').removeClass('d-none');
+      $('#ingredientAlert').removeClass('d-none');
 
-    $('#ingredientAlert .close').on('click', function() {
-      $('#ingredientAlert').addClass('d-none');
-    });
+      $('#ingredientAlert .close').on('click', function() {
+        $('#ingredientAlert').addClass('d-none');
+      });
   }
 }
 
@@ -52,12 +52,21 @@ function recipeByIngredient() {
       return response.json();
     })
     .then(function (data) {
-      var mealNumber = Math.floor(Math.random() * data.meals.length);
-      mealObj = data;
-      mealID = data.meals[mealNumber].idMeal;
-      console.log(mealObj);
-      getMealApi();
-      getCocktailApi();
+      if (data.meals == null) {
+        $('#ingredientAlert').removeClass('d-none');
+
+        $('#ingredientAlert .close').on('click', function() {
+          $('#ingredientAlert').addClass('d-none');
+        });
+      }
+      else {
+        var mealNumber = Math.floor(Math.random() * data.meals.length);
+        mealObj = data;
+        mealID = data.meals[mealNumber].idMeal;
+        console.log(mealObj);
+        getMealApi();
+        getCocktailApi();
+      }
     });
 }
 
