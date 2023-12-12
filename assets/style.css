@@ -19,11 +19,11 @@ h4 {
 .b-example-divider {
   width: 100%;
   height: 3rem;
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: rgba(165, 13, 13, 0.914);
   border: solid rgba(0, 0, 0, 0.15);
   border-width: 1px 0;
   box-shadow: inset 0 0.5em 1.5em rgba(0, 0, 0, 0.1),
-    inset 0 0.125em 0.5em rgba(0, 0, 0, 0.15);
+    inset 0 0.125em 0.5em rgba(0, 0, 0, 0.764);
 }
 
 .b-example-vr {
@@ -56,7 +56,7 @@ h4 {
 }
 
 .btn-bd-primary {
-  --bd-violet-bg: #712cf9;
+  --bd-violet-bg: #c9356c;
   --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
 
   --bs-btn-font-weight: 600;
@@ -64,12 +64,12 @@ h4 {
   --bs-btn-bg: var(--bd-violet-bg);
   --bs-btn-border-color: var(--bd-violet-bg);
   --bs-btn-hover-color: var(--bs-white);
-  --bs-btn-hover-bg: #6528e0;
-  --bs-btn-hover-border-color: #6528e0;
+  --bs-btn-hover-bg: #e028d4;
+  --bs-btn-hover-border-color: #c728e0;
   --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
   --bs-btn-active-color: var(--bs-btn-hover-color);
-  --bs-btn-active-bg: #5a23c8;
-  --bs-btn-active-border-color: #5a23c8;
+  --bs-btn-active-bg: #ba23c8;
+  --bs-btn-active-border-color: #af23c8;
 }
 
 .bd-mode-toggle {
