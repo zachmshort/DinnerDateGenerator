@@ -126,3 +126,7 @@ h4 {
 .searchButtons {
   background-color: #da0463;
 }
+
+.textSize {
+  font-size: 2rem;
+}
