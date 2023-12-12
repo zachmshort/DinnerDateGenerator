@@ -19,3 +19,5 @@ We hope SipNSnack Shenanigans adds a dash of excitement and eliminates the stres
 Link to Site:
 
 Link to GitHub Repository:
+
+![Alt text](DinnerDateGenerator.png)
