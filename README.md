@@ -1,4 +1,4 @@
-# Brypamaza
+# DinnerDateGenerator
 
 Welcome to SipNSnack Shenanigans - Your Ultimate Dinner Date Decision Solution!
 
