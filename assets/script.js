@@ -33,7 +33,6 @@ function searchRecipes() {
     $("#ingredientAlert").removeClass("d-none");
     $("#ingredientAlert .close").on("click", function () {
       $("#ingredientAlert").addClass("d-none");
-
     });
   }
 }
@@ -261,16 +260,18 @@ function displayDrinkData() {
 
 // storage function
 function lStorage() {
-var savedIngredient = JSON.parse(localStorage.getItem("ingredient")) || [];
-savedIngredient.push({ ingredient: mealArray.strMeal, recipe: mealID });
-localStorage.setItem("ingredient", JSON.stringify(savedIngredient));
+  var savedIngredient = JSON.parse(localStorage.getItem("ingredient")) || [];
+  savedIngredient.push({ ingredient: mealArray.strMeal, recipe: mealID });
+  localStorage.setItem("ingredient", JSON.stringify(savedIngredient));
 }
 // display last 5 saved items
 function displaySaved() {
   $("#savedSearches").empty();
   var saved = JSON.parse(localStorage.getItem("ingredient")) || [];
-  saved.forEach((entry) => {
-    $("#savedSearches").append("<li value=\""+entry.recipe+"\">" + entry.ingredient + "</li>");
+  saved.slice(-5).forEach((entry) => {
+    $("#savedSearches").append(
+      '<li value="' + entry.recipe + '">' + entry.ingredient + "</li>"
+    );
     $($("#savedSearches").children()).addClass("button");
   });
   $(".button").on("click", clickHandler);
@@ -292,4 +293,3 @@ $(document).on("keypress", "input", function (e) {
 $("#searchBtn").on("click", searchRecipes);
 $("#random").on("click", getRandomMealApi);
 $("#random").on("click", getCocktailApi);
-
