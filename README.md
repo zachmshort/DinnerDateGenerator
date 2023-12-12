@@ -3,7 +3,7 @@
 Welcome to SipNSnack Shenanigans - Your Ultimate Dinner Date Decision Solution!
 
 About Us:
-Welcome to our very first project at the Denver University Coding Bootcamp! We are team of four - Bryn Glofelty, Maguire Wilson, Patrick Mulville, and Zachary Short - who've come together to bring you SipNSnack Shenanigans. In this collaborative effort, we've crafted an application from the ground up for our users.
+Welcome to our very first project at the Denver University Coding Bootcamp! We are team of four - Bryn Glotfelty, Maguire Wilson, Patrick Mulville, and Zachary Short - who've come together to bring you SipNSnack Shenanigans. In this collaborative effort, we've crafted an application from the ground up for our users.
 
 🍔🍹 What We Do:
 Ever find yourself stuck in the endless loop of indecisiveness when planning a date? We get it, and that's why we're here to help! Our mission is to eliminate the frustration by offering you a fun solution: random meal and drink suggestions. No need to stress about recipes, because we've got you covered - the corresponding recipe will appear beneath the enticing image and name of your chosen meal and drink.

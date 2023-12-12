@@ -2,6 +2,9 @@ h4 {
   border-bottom: white 1px solid;
 }
 
+#navbarHeader {
+  padding-bottom: 1%;
+}
 .bd-placeholder-img {
   font-size: 1.125rem;
   text-anchor: middle;
@@ -129,4 +132,52 @@ h4 {
 
 .textSize {
   font-size: 2rem;
+}
+
+li {
+  border: #da0463 2px solid;
+  display: inline; 
+  margin-left: 5%;
+  padding: 1%;
+  border-radius: 5px;
+  background: #283149;
+  
+}
+li:hover {
+  color: whitesmoke;
+  cursor: pointer;
+  background: #404b69;
+}
+
+@media (max-width: 1200px) {
+  .bd-placeholder-img-lg {
+    font-size: 3.5rem;
+  }
+  li {
+    border: #da0463 2px solid;
+    display:list-item; 
+    margin-left: 5%;
+    padding: 1%;
+    border-radius: 5px;
+    background: #283149;
+    max-width: 200px;
+    margin-bottom: 1%;
+  }
+  li:hover {
+    color: whitesmoke;
+    cursor: pointer;
+    background: #404b69;
+  }
+}
+
+footer {
+  align-items: center;
+}
+
+h5 {
+  text-align: center;
+}
+
+.gitHubRepos {
+  color: #5a23c8;
 }
