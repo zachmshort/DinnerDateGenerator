@@ -94,3 +94,35 @@ h4 {
 .img2 {
   height: 300px;
 }
+
+.topSection {
+  background-color: #283149;
+}
+
+.topText {
+  color: #da0463;
+}
+
+.middlePart{
+  background-color: white;
+}
+
+.icon {
+  background-color: #da0463;
+}
+
+.recipeCard {
+  background-color: #dbedf3;
+}
+
+.bottomPart {
+  background-color: #404b69;
+}
+
+.recipeText {
+  color: white;
+}
+
+.searchButtons {
+  background-color: #da0463;
+}
