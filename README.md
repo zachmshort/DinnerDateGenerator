@@ -1,4 +1,4 @@
-# Brypamaza
+# DinnerDateGenerator
 
 Welcome to SipNSnack Shenanigans - Your Ultimate Dinner Date Decision Solution!
 
@@ -18,4 +18,10 @@ We hope SipNSnack Shenanigans adds a dash of excitement and eliminates the stres
 
 Link to Site: https://zachmshort.github.io/DinnerDateGenerator/
 
+
 Link to GitHub Repository: https://github.com/zachmshort/DinnerDateGenerator/
+
+Link to GitHub Repository:
+
+![Alt text](DinnerDateGenerator.png)
+
