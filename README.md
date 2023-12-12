@@ -16,6 +16,6 @@ Have a specific ingredient on hand that you want to include in your culinary adv
 
 We hope SipNSnack Shenanigans adds a dash of excitement and eliminates the stress of decision-making from your date nights. Enjoy your culinary journey, and here's to many more delightful date night moments, cheers! 🥂
 
-Link to Site:
+Link to Site: https://zachmshort.github.io/DinnerDateGenerator/
 
-Link to GitHub Repository:
+Link to GitHub Repository: https://github.com/zachmshort/DinnerDateGenerator/
