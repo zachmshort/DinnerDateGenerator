@@ -86,6 +86,7 @@ h4 {
   left: 0;
   height: 100%;
   width: 100%;
+  color: white;
 }
 
 .img1 {
@@ -93,4 +94,11 @@ h4 {
 }
 .img2 {
   height: 300px;
+}
+.test {
+  background-color: #c728e0;
+  color: white
+}
+.whitetxt{
+  color: white;
 }
