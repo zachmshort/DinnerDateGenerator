@@ -76,6 +76,7 @@ function getMealApi() {
     .then(function (data) {
       mealArray = data.meals[0];
       displayMealData();
+      displaySaved();
     });
 }
 
