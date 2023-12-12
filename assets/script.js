@@ -1,3 +1,4 @@
+// Global Variables
 var mealObj;
 var ingredientInput;
 var mealID;
@@ -7,6 +8,7 @@ displaySaved();
 $(".col2").hide();
 $(".col1").hide();
 
+// get random cocktail from thecocktaildb API
 function getCocktailApi() {
   var cocktailAPI = "https://www.thecocktaildb.com/api/json/v1/1/random.php";
 
@@ -20,30 +22,25 @@ function getCocktailApi() {
     });
 }
 
-$("#searchBtn").on("click", searchRecipes);
-$("#random").on("click", getRandomMealApi);
-$("#random").on("click", getCocktailApi);
-
+// take user input and format it in a way that the api will understand, and alert user if their input is blank
 function searchRecipes() {
-  ingredientInput = $("#ingredientInput").val();
-  console.log(ingredientInput);
-
+  var input = $("#ingredientInput").val();
+  $("#ingredientInput").val("");
+  ingredientInput = input.split(" ").join("_");
   if (ingredientInput.trim() !== "") {
     recipeByIngredient();
-
   } else {
     $("#ingredientAlert").removeClass("d-none");
-
     $("#ingredientAlert .close").on("click", function () {
       $("#ingredientAlert").addClass("d-none");
     });
   }
 }
 
+// search for a meal based on user input, and choose a random recipe from the list returned, and alert user if their input is insufficient
 function recipeByIngredient() {
   var mealURL =
     "https://www.themealdb.com/api/json/v1/1/filter.php?i=" + ingredientInput;
-  console.log(mealURL);
   fetch(mealURL)
     .then(function (response) {
       if (!response.ok) {
@@ -53,27 +50,25 @@ function recipeByIngredient() {
     })
     .then(function (data) {
       if (data.meals == null) {
-        $('#ingredientAlert').removeClass('d-none');
+        $("#ingredientAlert").removeClass("d-none");
 
-        $('#ingredientAlert .close').on('click', function() {
-          $('#ingredientAlert').addClass('d-none');
+        $("#ingredientAlert .close").on("click", function () {
+          $("#ingredientAlert").addClass("d-none");
         });
-      }
-      else {
+      } else {
         var mealNumber = Math.floor(Math.random() * data.meals.length);
         mealObj = data;
         mealID = data.meals[mealNumber].idMeal;
-        console.log(mealObj);
         getMealApi();
         getCocktailApi();
       }
     });
 }
 
+// get meal from themealdb API based on meal id from previous function
 function getMealApi() {
   var mealApi =
     "https://www.themealdb.com/api/json/v1/1/lookup.php?i=" + mealID;
-  console.log(mealApi);
   fetch(mealApi)
     .then(function (response) {
       return response.json();
@@ -86,6 +81,7 @@ function getMealApi() {
     });
 }
 
+// get a random meal from themealdb API
 function getRandomMealApi() {
   var mealApi = "https://www.themealdb.com/api/json/v1/1/random.php";
   fetch(mealApi)
@@ -98,7 +94,7 @@ function getRandomMealApi() {
     });
 }
 
-
+// display meal data with recipe and instrucions
 function displayMealData() {
   $(".col1").show();
   var displayImage = mealArray.strMealThumb;
@@ -185,6 +181,8 @@ function displayMealData() {
     }
   }
 }
+
+// display drink data with recipe and instructions
 function displayDrinkData() {
   $(".col2").show();
   var displayImage = drinkArray.strDrinkThumb;
@@ -261,12 +259,13 @@ function displayDrinkData() {
   }
 }
 
+// storage function
 function lStorage() {
   var savedIngredient = JSON.parse(localStorage.getItem("ingredient")) || [];
   savedIngredient.push({ ingredient: mealArray.strMeal, recipe: mealID });
   localStorage.setItem("ingredient", JSON.stringify(savedIngredient));
 }
-
+// display last 5 saved items
 function displaySaved() {
   $("#savedSearches").empty();
   var saved = JSON.parse(localStorage.getItem("ingredient")) || [];
@@ -279,9 +278,19 @@ function displaySaved() {
   $(".button").on("click", clickHandler);
 }
 
+// search meal by id of clicked search history item
 function clickHandler() {
   mealID = $(this).attr("value");
   getMealApi();
   getCocktailApi();
-
 }
+
+// event listeners
+$(document).on("keypress", "input", function (e) {
+  if (e.which == 13) {
+    searchRecipes();
+  }
+});
+$("#searchBtn").on("click", searchRecipes);
+$("#random").on("click", getRandomMealApi);
+$("#random").on("click", getCocktailApi);
