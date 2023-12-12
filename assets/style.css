@@ -106,7 +106,7 @@ h4 {
   color: #da0463;
 }
 
-.middlePart{
+.middlePart {
   background-color: white;
 }
 
@@ -133,29 +133,46 @@ h4 {
 .textSize {
   font-size: 2rem;
 }
-
-li {
+#savedSearches {
+  display: flex;
+  min-width: 100%;
+  text-decoration: none;
+  text-decoration: inherit;
+  text-align: center;
+  justify-content: center;
+}
+header li {
   border: #da0463 2px solid;
-  display: inline; 
-  margin-left: 5%;
+  display: inline;
+  margin-left: 3%;
+  margin-right: 3%;
   padding: 1%;
+  max-width: 200px;
   border-radius: 5px;
   background: #283149;
-  
 }
-li:hover {
+header li:hover {
   color: whitesmoke;
   cursor: pointer;
   background: #404b69;
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 600px) {
   .bd-placeholder-img-lg {
     font-size: 3.5rem;
   }
-  li {
+  #savedSearches,
+  #authors {
+    display: block;
+    min-width: 100%;
+    text-decoration: none;
+    text-decoration: inherit;
+    text-align: center;
+    justify-content: center;
+  }
+  header li {
     border: #da0463 2px solid;
-    display:list-item; 
+    display: list-item;
     margin-left: 5%;
     padding: 1%;
     border-radius: 5px;
@@ -163,7 +180,7 @@ li:hover {
     max-width: 200px;
     margin-bottom: 1%;
   }
-  li:hover {
+  header li:hover {
     color: whitesmoke;
     cursor: pointer;
     background: #404b69;
@@ -172,12 +189,43 @@ li:hover {
 
 footer {
   align-items: center;
+
+  background: #404b69;
+  margin: auto;
+  min-height: 175px;
 }
 
 h5 {
   text-align: center;
+  font-size: 2.5rem;
 }
 
-.gitHubRepos {
-  color: #5a23c8;
+#authors {
+  display: flex;
+  min-width: 100%;
+  text-decoration: none;
+  text-decoration: inherit;
+  position: absolute;
+  text-align: center;
+  justify-content: center;
+}
+
+a {
+  text-decoration: inherit;
+  color: white;
+}
+footer .gitHubRepos {
+  border: #da0463 2px solid;
+  color: #dbedf3;
+  display: inline;
+  margin-left: 3%;
+  margin-right: 3%;
+  padding: 1%;
+  border-radius: 5px;
+  background: #283149;
+}
+footer li:hover {
+  color: whitesmoke;
+  cursor: pointer;
+  background: #404b69;
 }

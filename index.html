@@ -18,7 +18,6 @@
     <link href="./assets/style.css" rel="stylesheet" />
   </head>
   <body>
-    
     <header data-bs-theme="dark">
       <div class="collapse text-bg-dark" id="navbarHeader">
         <div class="container">
@@ -27,10 +26,8 @@
               <h4>Last Five Searches</h4>
               <p class="text-body-secondary"></p>
             </section>
-            <div >
-              <ul class="list-unstyled" id="savedSearches">
-          
-              </ul>
+            <div>
+              <ul class="list-unstyled" id="savedSearches"></ul>
             </div>
           </div>
         </div>
@@ -38,7 +35,6 @@
       <div class="navbar navbar-dark topSection shadow-sm">
         <div class="container">
           <a href="#" class="navbar-brand d-flex align-items-center">
-         
             <strong class="topText"> Sip-N-Snack Shenanigans</strong>
           </a>
           <button
@@ -50,11 +46,9 @@
             aria-expanded="false"
             aria-label=" example text"
           >
-          <strong class="navbar-brand">Search History</strong>
+            <strong class="navbar-brand">Search History</strong>
             <span class="navbar-toggler-icon"></span>
           </button>
-
-
         </div>
       </div>
     </header>
@@ -63,40 +57,59 @@
       <section class="py-5 text-center container">
         <div class="row py-lg-5">
           <div class="col-lg-6 col-md-8 mx-auto">
-            <h1 class="fw-light textSize">Enter an ingredient or click Surprise Me!</h1>
-            <p class="lead text-body-secondary">
-            </p>
-            <p>
-              <div id="ingredientAlert" class="alert alert-warning alert-dismissible d-none" role="alert">
-                <strong>Sorry!</strong> Please try another primary ingredient or select Suprise Me!
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <h1 class="fw-light textSize">
+              Enter an ingredient or click Surprise Me!
+            </h1>
+            <p class="lead text-body-secondary"></p>
+            <div>
+              <div
+                id="ingredientAlert"
+                class="alert alert-warning alert-dismissible d-none"
+                role="alert"
+              >
+                <strong>Sorry!</strong> Please try another primary ingredient or
+                select Suprise Me!
+                <button
+                  type="button"
+                  class="close"
+                  data-dismiss="alert"
+                  aria-label="Close"
+                >
                   <span aria-hidden="true">&times;</span>
                 </button>
               </div>
               <input
-              type="text"
-              id="ingredientInput"
-              class="form-control"
-              placeholder="What primary ingredient do you already have? E.g. Beef, eggs, or lettuce"
-            />
-              <a href="#" class="btn btn-secondary my-6 searchButtons" id="searchBtn">Search Recipes</a>
-              <a href="#" class="btn btn-secondary my-2 searchButtons" id="random"> Suprise Me!</a>
-            </p>
+                type="text"
+                id="ingredientInput"
+                class="form-control"
+                placeholder="What primary ingredient do you already have? E.g. Beef, eggs, or lettuce"
+              />
+              <a
+                href="#"
+                class="btn btn-secondary my-6 searchButtons"
+                id="searchBtn"
+                >Search Recipes</a
+              >
+              <a
+                href="#"
+                class="btn btn-secondary my-2 searchButtons"
+                id="random"
+              >
+                Suprise Me!</a
+              >
+            </div>
           </div>
         </div>
       </section>
-
-
-
-      <div class="album py-5 bottomPart min-vh-100" >
-        <div class="container ">
+      <div class="album py-5 bottomPart min-vh-100">
+        <div class="container">
           <div class="row row-cols-1 row-cols-sm-2 row-cols-md-2 g-2">
             <div class="col1">
               <div class="card shadow-sm recipeCard">
-                <div >
-                  <img class="img1 w-100 object-fit-contain">
+                <div>
+                  <img class="img1 w-100 object-fit-contain" />
                   <div class="overlayText">
-                <span class=" z-1 bg-secondary  rounded p-2"></span>
+                    <span class="z-1 bg-secondary rounded p-2"></span>
                   </div>
                 </div>
                 <div class="card-body">
@@ -110,10 +123,10 @@
             </div>
             <div class="col2">
               <div class="card shadow-sm recipeCard">
-                <div >
-                  <img class="img2 w-100 object-fit-contain">
+                <div>
+                  <img class="img2 w-100 object-fit-contain" />
                   <div class="overlayText">
-                <span class=" z-1 bg-secondary  rounded p-2"></span>
+                    <span class="z-1 bg-secondary rounded p-2"></span>
                   </div>
                 </div>
                 <div class="card-body">
@@ -124,22 +137,41 @@
                   </div>
                 </div>
               </div>
-            </div> 
-          </body>  
-    <footer>
-      <h5>Link to GitHub Repositories</h4>
-        <div >
-          <ul class="list-unstyled" id="savedSearches">
-            <li class="gitHubRepos">Maguire Wlson</li>
-            <li class="gitHubRepos">Patrick Mulville</li>
-            <li class="gitHubRepos">Bryn Glotfelty</li>
-            <li class="gitHubRepos">Zachary Short</li>
-          </ul>
+            </div>
+          </div>
         </div>
-    </footer>
+      </div>
+    </main>
+  </body>
+  <footer>
+    <h5>Links to Author's GitHubs</h5>
+    <div>
+      <ul class="list-unstyled" id="authors">
+        <li class="gitHubRepos">
+          <a href="https://github.com/MacroWil" target="no_blank"
+            >Maguire Wilson</a
+          >
+        </li>
+        <li class="gitHubRepos">
+          <a href="https://github.com/pmulville" target="no_blank"
+            >Patrick Mulville</a
+          >
+        </li>
+        <li class="gitHubRepos">
+          <a href="https://github.com/Bryncidently" target="no_blank"
+            >Bryn Glotfelty</a
+          >
+        </li>
+        <li class="gitHubRepos">
+          <a href="https://github.com/zachmshort" target="no_blank"
+            >Zachary Short</a
+          >
+        </li>
+      </ul>
+    </div>
+  </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="./assets/script.js"></script>
-  
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="./assets/script.js"></script>
 </html>
