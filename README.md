@@ -21,7 +21,7 @@ Link to Site: https://zachmshort.github.io/DinnerDateGenerator/
 
 Link to GitHub Repository: https://github.com/zachmshort/DinnerDateGenerator/
 
-Link to GitHub Repository:
+
 
 ![Alt text](DinnerDateGenerator.png)
 
